@@ -9,6 +9,10 @@ type NonceGenerateFunc func() (string, error)
 
 type AppOption func(a *App)
 
+type HttpHandlerOptions struct {
+	AccessTokenGeneratedFunc func(t *AccessToken) error
+}
+
 type App struct {
 	cfg           ShopifyAppConfig
 	httpClient    *http.Client
